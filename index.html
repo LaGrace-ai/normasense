@@ -2,123 +2,117 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Normasense — Sens, conscience et évolution</title>
+  <title>Normasense — Comprendre le monde avec clarté</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <style>
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      background: #f7f9fb;
+      color: #1f2933;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #0f172a;
       color: white;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .container {
-      max-width: 600px;
-      padding: 25px;
-      background: rgba(0, 0, 0, 0.35);
-      border-radius: 15px;
+      padding: 40px 20px;
       text-align: center;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
     }
 
-    h1 {
-      margin-bottom: 10px;
+    header h1 {
+      margin: 0;
       font-size: 2.2em;
       letter-spacing: 1px;
     }
 
-    p {
+    header p {
+      max-width: 600px;
+      margin: 15px auto 0;
       font-size: 1.05em;
-      line-height: 1.6;
+      opacity: 0.9;
     }
 
-    select {
-      margin-top: 15px;
-      padding: 8px;
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .card {
+      background: white;
       border-radius: 8px;
-      border: none;
-      font-size: 1em;
+      padding: 25px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      color: #0f172a;
     }
 
     .quote {
-      margin-top: 25px;
       font-style: italic;
-      font-size: 1.1em;
-      color: #ffd369;
+      font-size: 1.2em;
+      color: #334155;
     }
 
     footer {
-      margin-top: 30px;
-      font-size: 0.85em;
-      opacity: 0.8;
+      text-align: center;
+      padding: 25px;
+      font-size: 0.9em;
+      color: #64748b;
     }
   </style>
 </head>
 
 <body>
 
-  <div class="container">
-    <h1 id="title">Normasense</h1>
+<header>
+  <h1>Normasense</h1>
+  <p>
+    Comprendre les lois, les situations et la vie avec plus de clarté.
+    Un espace pour penser calmement dans un monde bruyant.
+  </p>
+</header>
 
-    <p id="description">
-      Un espace de réflexion, de conscience et d’évolution personnelle.
+<main>
+
+  <section class="card">
+    <h2>Pourquoi Normasense ?</h2>
+    <p>
+      Les situations difficiles n’arrivent pas tous les jours, mais quand elles arrivent,
+      le manque de compréhension peut coûter cher.
+      Normasense existe pour rendre l’information claire, utile et accessible,
+      même lorsque tout semble confus.
     </p>
+  </section>
 
-    <select onchange="changeLanguage(this.value)">
-      <option value="fr">Français</option>
-      <option value="en">English</option>
-      <option value="es">Español</option>
-      <option value="de">Deutsch</option>
-    </select>
+  <section class="card">
+    <h2>Phrase du jour</h2>
+    <p class="quote" id="dailyQuote"></p>
+  </section>
 
-    <div class="quote" id="quote"></div>
+</main>
 
-    <footer>
-      © 2026 — Normasense
-    </footer>
-  </div>
+<footer>
+  © 2026 Normasense — La clarté avant la confusion.
+</footer>
 
-  <script>
-    const quotes = [
-      "Chaque pas conscient change ton destin.",
-      "Le silence intérieur est une forme de sagesse.",
-      "Comprendre soi-même, c’est déjà évoluer.",
-      "Ta vie prend sens quand tu choisis la conscience.",
-      "Ce que tu nourris en toi grandit."
-    ];
+<script>
+  const quotes = [
+    "Comprendre vaut mieux que réagir.",
+    "La clarté protège plus que la force.",
+    "Ce que tu comprends, tu peux le maîtriser.",
+    "La patience est une forme d’intelligence.",
+    "La vie devient plus simple quand le sens est clair."
+  ];
 
-    document.getElementById("quote").innerText =
-      quotes[Math.floor(Math.random() * quotes.length)];
-
-    const texts = {
-      fr: {
-        title: "Normasense",
-        description: "Un espace de réflexion, de conscience et d’évolution personnelle."
-      },
-      en: {
-        title: "Normasense",
-        description: "A space for reflection, awareness, and personal growth."
-      },
-      es: {
-        title: "Normasense",
-        description: "Un espacio de reflexión, conciencia y crecimiento personal."
-      },
-      de: {
-        title: "Normasense",
-        description: "Ein Raum für Reflexion, Bewusstsein und persönliche Entwicklung."
-      }
-    };
-
-    function changeLanguage(lang) {
-      document.getElementById("title").innerText = texts[lang].title;
-      document.getElementById("description").innerText = texts[lang].description;
-    }
-  </script>
+  const today = new Date().getDate();
+  const quote = quotes[today % quotes.length];
+  document.getElementById("dailyQuote").innerText = quote;
+</script>
 
 </body>
 </html>
