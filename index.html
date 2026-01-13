@@ -2,113 +2,123 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Normasense — Smart Norms, Smarter Living</title>
+  <title>Normasense — Sens, conscience et évolution</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
       color: white;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
-    header {
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
-    }
-
-    header p {
-      font-size: 1.1em;
-      opacity: 0.9;
-    }
-
-    .cta {
-      margin-top: 30px;
-    }
-
-    .cta a {
-      display: inline-block;
-      padding: 15px 30px;
-      background: #00e6a8;
-      color: #003333;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 30px;
-    }
-
-    section {
-      padding: 50px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    section h2 {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .feature {
-      background: rgba(255,255,255,0.1);
-      padding: 20px;
+    .container {
+      max-width: 600px;
+      padding: 25px;
+      background: rgba(0, 0, 0, 0.35);
       border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      font-size: 2.2em;
+      letter-spacing: 1px;
+    }
+
+    p {
+      font-size: 1.05em;
+      line-height: 1.6;
+    }
+
+    select {
+      margin-top: 15px;
+      padding: 8px;
+      border-radius: 8px;
+      border: none;
+      font-size: 1em;
+    }
+
+    .quote {
+      margin-top: 25px;
+      font-style: italic;
+      font-size: 1.1em;
+      color: #ffd369;
     }
 
     footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
-      opacity: 0.7;
+      margin-top: 30px;
+      font-size: 0.85em;
+      opacity: 0.8;
     }
   </style>
 </head>
 
 <body>
 
-<header>
-  <h1>Normasense</h1>
-  <p>Comprendre les normes. Simplifier le monde. Accéder à l’essentiel.</p>
+  <div class="container">
+    <h1 id="title">Normasense</h1>
 
-  <div class="cta">
-    <a href="#">Commencer l’essai gratuit</a>
+    <p id="description">
+      Un espace de réflexion, de conscience et d’évolution personnelle.
+    </p>
+
+    <select onchange="changeLanguage(this.value)">
+      <option value="fr">Français</option>
+      <option value="en">English</option>
+      <option value="es">Español</option>
+      <option value="de">Deutsch</option>
+    </select>
+
+    <div class="quote" id="quote"></div>
+
+    <footer>
+      © 2026 — Normasense
+    </footer>
   </div>
-</header>
 
-<section>
-  <h2>Pourquoi Normasense ?</h2>
+  <script>
+    const quotes = [
+      "Chaque pas conscient change ton destin.",
+      "Le silence intérieur est une forme de sagesse.",
+      "Comprendre soi-même, c’est déjà évoluer.",
+      "Ta vie prend sens quand tu choisis la conscience.",
+      "Ce que tu nourris en toi grandit."
+    ];
 
-  <div class="features">
-    <div class="feature">
-      <h3>📘 Normes simplifiées</h3>
-      <p>Accédez aux normes expliquées clairement, sans jargon inutile.</p>
-    </div>
+    document.getElementById("quote").innerText =
+      quotes[Math.floor(Math.random() * quotes.length)];
 
-    <div class="feature">
-      <h3>🌍 Accessible partout</h3>
-      <p>Un accès mondial, pensé pour tous les pays et toutes les langues.</p>
-    </div>
+    const texts = {
+      fr: {
+        title: "Normasense",
+        description: "Un espace de réflexion, de conscience et d’évolution personnelle."
+      },
+      en: {
+        title: "Normasense",
+        description: "A space for reflection, awareness, and personal growth."
+      },
+      es: {
+        title: "Normasense",
+        description: "Un espacio de reflexión, conciencia y crecimiento personal."
+      },
+      de: {
+        title: "Normasense",
+        description: "Ein Raum für Reflexion, Bewusstsein und persönliche Entwicklung."
+      }
+    };
 
-    <div class="feature">
-      <h3>⏱ Gain de temps</h3>
-      <p>Plus besoin de chercher pendant des heures : l’essentiel est là.</p>
-    </div>
-  </div>
-</section>
-
-<footer>
-  © 2026 Normasense — Tous droits réservés
-</footer>
+    function changeLanguage(lang) {
+      document.getElementById("title").innerText = texts[lang].title;
+      document.getElementById("description").innerText = texts[lang].description;
+    }
+  </script>
 
 </body>
 </html>
