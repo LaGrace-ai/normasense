@@ -1,118 +1,53 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Normasense — Comprendre le monde avec clarté</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f7f9fb;
-      color: #1f2933;
-      line-height: 1.6;
-    }
-
-    header {
-      background: #0f172a;
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.2em;
-      letter-spacing: 1px;
-    }
-
-    header p {
-      max-width: 600px;
-      margin: 15px auto 0;
-      font-size: 1.05em;
-      opacity: 0.9;
-    }
-
-    main {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-
-    .card {
-      background: white;
-      border-radius: 8px;
-      padding: 25px;
-      margin-bottom: 30px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-    }
-
-    .card h2 {
-      margin-top: 0;
-      color: #0f172a;
-    }
-
-    .quote {
-      font-style: italic;
-      font-size: 1.2em;
-      color: #334155;
-    }
-
-    footer {
-      text-align: center;
-      padding: 25px;
-      font-size: 0.9em;
-      color: #64748b;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Normasense — Comprendre. Décider. Avancer.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<header>
-  <h1>Normasense</h1>
-  <p>
-    Comprendre les lois, les situations et la vie avec plus de clarté.
-    Un espace pour penser calmement dans un monde bruyant.
-  </p>
+<header class="header">
+    <h1>Normasense</h1>
+    <p class="subtitle">Comprendre le monde. Prendre de meilleures décisions.</p>
 </header>
 
-<main>
-
-  <section class="card">
-    <h2>Pourquoi Normasense ?</h2>
+<section class="hero">
+    <h2>Un guide intelligent pour la vie quotidienne</h2>
     <p>
-      Les situations difficiles n’arrivent pas tous les jours, mais quand elles arrivent,
-      le manque de compréhension peut coûter cher.
-      Normasense existe pour rendre l’information claire, utile et accessible,
-      même lorsque tout semble confus.
+        Normasense vous aide à analyser les situations,
+        comprendre les règles, les normes et les choix possibles,
+        sans décider à votre place.
     </p>
-  </section>
+    <a href="#" class="btn">Commencer gratuitement</a>
+</section>
 
-  <section class="card">
-    <h2>Phrase du jour</h2>
-    <p class="quote" id="dailyQuote"></p>
-  </section>
+<section class="features">
+    <div class="card">
+        <h3>Analyse intelligente</h3>
+        <p>Comprenez les situations complexes grâce à une logique claire et structurée.</p>
+    </div>
 
-</main>
+    <div class="card">
+        <h3>Autonomie préservée</h3>
+        <p>Normasense n’impose rien : vous restez maître de vos décisions.</p>
+    </div>
 
-<footer>
-  © 2026 Normasense — La clarté avant la confusion.
+    <div class="card">
+        <h3>Évolution continue</h3>
+        <p>Les règles, normes et réalités évoluent — Normasense aussi.</p>
+    </div>
+</section>
+
+<section class="quote">
+    <p id="daily-quote">“Chaque décision éclairée est une victoire sur le hasard.”</p>
+</section>
+
+<footer class="footer">
+    <p>© 2026 Normasense — Tous droits réservés</p>
 </footer>
 
-<script>
-  const quotes = [
-    "Comprendre vaut mieux que réagir.",
-    "La clarté protège plus que la force.",
-    "Ce que tu comprends, tu peux le maîtriser.",
-    "La patience est une forme d’intelligence.",
-    "La vie devient plus simple quand le sens est clair."
-  ];
-
-  const today = new Date().getDate();
-  const quote = quotes[today % quotes.length];
-  document.getElementById("dailyQuote").innerText = quote;
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
