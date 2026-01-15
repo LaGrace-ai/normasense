@@ -1,1 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Normasense – Chemin de vie</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #ffffff;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      background: rgba(0, 0, 0, 0.4);
+      padding: 30px;
+      border-radius: 15px;
+      max-width: 500px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      font-size: 28px;
+      letter-spacing: 1px;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      opacity: 0.8;
+      margin-bottom: 25px;
+    }
+
+    .quote {
+      font-size: 18px;
+      line-height: 1.5;
+      margin: 20px 0;
+      padding: 20px;
+      border-left: 4px solid #00c6ff;
+      background: rgba(255,255,255,0.05);
+      border-radius: 8px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 25px;
+      background: #00c6ff;
+      color: #000;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #00a6d6;
+    }
+
+    footer {
+      margin-top: 20px;
+      font-size: 12px;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Normasense</h1>
+    <div class="subtitle">Comprendre la vie, un pas à la fois</div>
+
+    <div id="quote" class="quote">
+      Chargement de la pensée du jour...
+    </div>
+
+    <button onclick="nouvellePhrase()">Nouvelle réflexion</button>
+
+    <footer>
+      © 2026 Normasense – Le chemin se construit chaque jour
+    </footer>
+  </div>
+
+  <script>
+    const phrases = [
+      "Le passé appartient au passé, mais les leçons lui survivent.",
+      "Le présent est le seul moment où tu peux réellement agir.",
+      "Le futur se construit par les choix silencieux d’aujourd’hui.",
+      "Grandir, c’est accepter de ne pas tout comprendre immédiatement.",
+      "La patience est une forme de sagesse souvent sous-estimée.",
+      "Ce que tu répètes chaque jour finit par te définir.",
+      "La discipline te portera là où la motivation s’arrête.",
+      "Avancer lentement est toujours mieux que rester immobile.",
+      "Les erreurs ne sont pas des échecs mais des directions.",
+      "Apprendre à se connaître est un travail de toute une vie.",
+      "La constance transforme les petits efforts en grandes réussites.",
+      "Tout ne mérite pas une réaction, certaines choses méritent la paix.",
+      "Ce n’est pas le temps qui manque, c’est la clarté.",
+      "Se respecter soi-même est la première forme de réussite.",
+      "La vie teste avant de récompenser.",
+      "Les choix faciles compliquent souvent l’avenir.",
+      "Chaque jour est une opportunité déguisée.",
+      "Ton rythme est valable, même s’il est différent.",
+      "Ce que tu nourris en toi finit par grandir.",
+      "La lucidité est parfois inconfortable mais toujours libératrice."
+    ];
+
+    function nouvellePhrase() {
+      const index = Math.floor(Math.random() * phrases.length);
+      document.getElementById("quote").innerText = phrases[index];
+    }
+
+    // Affiche une phrase dès l'ouverture
+    nouvellePhrase();
+  </script>
+
+</body>
+</html>
